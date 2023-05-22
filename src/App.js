@@ -1,19 +1,18 @@
 import './App.css';
+import { useState } from 'react'
 
-const Person = (props) => {
-  return (
-    <>
-      <h1>Name: {props.name}</h1>
-      <h2>Last Name: {props.lastName}</h2>
-      <h2>Age: {props.age}</h2>
-    </>
-  )
-}
 const App = () => {
+
+  const [counter, setCounter] = useState(0);  //array destructuring, calling something as a function and it starts with 'use', we call that a hook
+  //name of that state, setter function [second var same as first var, with 'set' in front of it]
+  //inside the useState(), give initial value, here, 0.
+
+
   return (
     <div className="App"> 
-      <Person name='Vibavari' lastName='Gurunathan' age={21}/>
-      <Person name='Twinkle' lastName='Madan' age= {23}/>
+      <button onClick={() => alert('clicked')}>-</button>
+      <h1>{counter}</h1>
+      <button>+</button>
     </div>
   );
 }
