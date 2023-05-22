@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const App = () => {
 
@@ -7,6 +7,11 @@ const App = () => {
   //name of that state, setter function [second var same as first var, with 'set' in front of it]
   //inside the useState(), give initial value, here, 0.
 
+  useEffect(()=>{       //hapens as soon as the App component renders i.e every time I make a state change
+    alert('Reload')
+    //react state should only be changed using its own setter
+    counter = 100;
+  })
 
   return (
     <div className="App"> 
