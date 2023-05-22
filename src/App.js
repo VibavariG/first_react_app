@@ -16,6 +16,7 @@ const movie1 = {
 const App = () => {
     //asynchronous data mean its gonna take some time to fetch these movies
     const [movies, setMovies] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('')
 
     const searchMovies = async (title) => {
         const response = await fetch(`${API_URL}&s=${title}`)
@@ -33,13 +34,13 @@ const App = () => {
             <div className='search'>
                 <input
                   placeholder='Search for Movies'
-                  value = 'Superman'
-                  onChange = {()=>{}}
+                  value = {searchTerm}
+                  onChange = {(e)=>setSearchTerm(e.target.value)}
                 />
                 <img
                   src = {SearchIcon}
                   alt='search'
-                  onClick = {()=>{}}
+                  onClick = {()=> searchMovies(searchTerm)}
                 />
             </div>
 
