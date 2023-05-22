@@ -8,10 +8,13 @@ const App = () => {
   //inside the useState(), give initial value, here, 0.
 
   useEffect(()=>{       //hapens as soon as the App component renders i.e every time I make a state change
-    alert('Reload')
-    //react state should only be changed using its own setter
-    counter = 100;
-  })
+    alert(counter)
+    //react state should only be changed using its own setter, here, setCounter
+    //setCounter(100);
+  }, [counter])
+
+  //[] means it's only gonna happen at the initial load of the component
+  //[counter] means it happens everytime the variable inside [] changes
 
   return (
     <div className="App"> 
